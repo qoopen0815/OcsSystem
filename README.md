@@ -1,2 +1,2 @@
 # OCS_System
-System Assets for OCS.
+System tools for OpenConstructionSim.

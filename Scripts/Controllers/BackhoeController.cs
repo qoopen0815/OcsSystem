@@ -30,7 +30,7 @@ namespace Ocs.Vehicles
         private void OnDisable()
         {
             this._input.Disable();
-            this._vehicle.BodyJointInput = 0.0f;
+            this._vehicle.BaseJointInput = 0.0f;
             this._vehicle.BoomJointInput = 0.0f;
             this._vehicle.ArmJointInput = 0.0f;
             this._vehicle.EndJointInput = 0.0f;
@@ -40,7 +40,7 @@ namespace Ocs.Vehicles
 
         void Update()
         {
-            this._vehicle.BodyJointInput = this._input.BackhoeDriver.LeftStick.ReadValue<Vector2>()[0];
+            this._vehicle.BaseJointInput = this._input.BackhoeDriver.LeftStick.ReadValue<Vector2>()[0];
             this._vehicle.BoomJointInput = this._input.BackhoeDriver.RightStick.ReadValue<Vector2>()[1];
             this._vehicle.ArmJointInput = this._input.BackhoeDriver.LeftStick.ReadValue<Vector2>()[1];
             this._vehicle.EndJointInput = this._input.BackhoeDriver.RightStick.ReadValue<Vector2>()[0];

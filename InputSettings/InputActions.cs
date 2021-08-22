@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/OpenConstructionSim/InputSettings/InputActions.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/OCS/OCS_System/InputSettings/InputActions.inputactions'
 
 using System;
 using System.Collections;
@@ -956,6 +956,14 @@ namespace Ocs.Input
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Joint1"",
+                    ""type"": ""Button"",
+                    ""id"": ""84530ed9-cf71-4bbd-a233-14e01bbd31f0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -1209,6 +1217,39 @@ namespace Ocs.Input
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Joint0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""18b16bec-ea60-4498-a9da-72d9aa8bd10a"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joint1"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""454479d8-883d-4258-8ed0-f975653f8efe"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Joint1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""4f4fbf1e-2c53-48e9-b3f7-79a9a6f92471"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Joint1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -1607,6 +1648,7 @@ namespace Ocs.Input
             m_CarDriver_Look = m_CarDriver.FindAction("Look", throwIfNotFound: true);
             m_CarDriver_Light = m_CarDriver.FindAction("Light", throwIfNotFound: true);
             m_CarDriver_Joint0 = m_CarDriver.FindAction("Joint0", throwIfNotFound: true);
+            m_CarDriver_Joint1 = m_CarDriver.FindAction("Joint1", throwIfNotFound: true);
             // BackhoeDriver
             m_BackhoeDriver = asset.FindActionMap("BackhoeDriver", throwIfNotFound: true);
             m_BackhoeDriver_RightForward = m_BackhoeDriver.FindAction("RightForward", throwIfNotFound: true);
@@ -1846,6 +1888,7 @@ namespace Ocs.Input
         private readonly InputAction m_CarDriver_Look;
         private readonly InputAction m_CarDriver_Light;
         private readonly InputAction m_CarDriver_Joint0;
+        private readonly InputAction m_CarDriver_Joint1;
         public struct CarDriverActions
         {
             private @InputActions m_Wrapper;
@@ -1858,6 +1901,7 @@ namespace Ocs.Input
             public InputAction @Look => m_Wrapper.m_CarDriver_Look;
             public InputAction @Light => m_Wrapper.m_CarDriver_Light;
             public InputAction @Joint0 => m_Wrapper.m_CarDriver_Joint0;
+            public InputAction @Joint1 => m_Wrapper.m_CarDriver_Joint1;
             public InputActionMap Get() { return m_Wrapper.m_CarDriver; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1891,6 +1935,9 @@ namespace Ocs.Input
                     @Joint0.started -= m_Wrapper.m_CarDriverActionsCallbackInterface.OnJoint0;
                     @Joint0.performed -= m_Wrapper.m_CarDriverActionsCallbackInterface.OnJoint0;
                     @Joint0.canceled -= m_Wrapper.m_CarDriverActionsCallbackInterface.OnJoint0;
+                    @Joint1.started -= m_Wrapper.m_CarDriverActionsCallbackInterface.OnJoint1;
+                    @Joint1.performed -= m_Wrapper.m_CarDriverActionsCallbackInterface.OnJoint1;
+                    @Joint1.canceled -= m_Wrapper.m_CarDriverActionsCallbackInterface.OnJoint1;
                 }
                 m_Wrapper.m_CarDriverActionsCallbackInterface = instance;
                 if (instance != null)
@@ -1919,6 +1966,9 @@ namespace Ocs.Input
                     @Joint0.started += instance.OnJoint0;
                     @Joint0.performed += instance.OnJoint0;
                     @Joint0.canceled += instance.OnJoint0;
+                    @Joint1.started += instance.OnJoint1;
+                    @Joint1.performed += instance.OnJoint1;
+                    @Joint1.canceled += instance.OnJoint1;
                 }
             }
         }
@@ -2113,6 +2163,7 @@ namespace Ocs.Input
             void OnLook(InputAction.CallbackContext context);
             void OnLight(InputAction.CallbackContext context);
             void OnJoint0(InputAction.CallbackContext context);
+            void OnJoint1(InputAction.CallbackContext context);
         }
         public interface IBackhoeDriverActions
         {

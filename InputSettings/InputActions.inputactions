@@ -941,6 +941,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Joint1",
+                    "type": "Button",
+                    "id": "84530ed9-cf71-4bbd-a233-14e01bbd31f0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -1194,6 +1202,39 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Joint0",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "18b16bec-ea60-4498-a9da-72d9aa8bd10a",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Joint1",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "454479d8-883d-4258-8ed0-f975653f8efe",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Joint1",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "4f4fbf1e-2c53-48e9-b3f7-79a9a6f92471",
+                    "path": "<Gamepad>/dpad/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Joint1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

@@ -18,11 +18,11 @@ public class GamePlayer : MonoBehaviour
 
     private int _vehicleNum = 0;
     private bool _isMenu = true;
-    private Ocs.Input.InputActions _input;
-    public Ocs.Input.InputActions Input { get => _input; }
+    private Ocs.Input.SystemInput _input;
+    public Ocs.Input.SystemInput Input { get => _input; }
     public GameObject Camera { set => _camera = value; }
 
-    private void Awake() => this._input = new Ocs.Input.InputActions();
+    private void Awake() => this._input = new Ocs.Input.SystemInput();
     private void OnEnable() => this._input.Enable();
     private void OnDisable() => this._input.Disable();
     private void OnDestroy() => this._input.Dispose();
